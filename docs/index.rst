@@ -1,16 +1,11 @@
-Welcome to imageio's documentation!
-===================================
+# Create a GIF with Python 🎞️
 
-.. automodule:: imageio
+import imageio.v3 as iio
 
+filenames = ['team-pic1.png', 'team-pic2.png']
+images = [ ]
 
-Contents:
+for filename in filenames:
+  images.append(iio.imread(filename))
 
-.. toctree::
-  :maxdepth: 2
-  
-  User Guide <user_guide/index>
-  Examples <examples>
-  Supported Formats <formats/index>
-  API Reference <reference/index>
-  Contributing <development/index>
+iio.imwrite('team.gif', images, duration = 500, loop = 0)
